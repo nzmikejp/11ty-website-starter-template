@@ -6,7 +6,6 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 // Helper packages
 const slugify = require("slugify");
 const markdownIt = require("markdown-it");
-const markdownItAnchor = require("markdown-it-anchor");
 
 // Local utilities/data
 const packageVersion = require("./package.json").version;
@@ -41,19 +40,7 @@ module.exports = function (eleventyConfig) {
   /* Markdown Overrides */
   let markdownLibrary = markdownIt({
     html: true,
-  }).use(markdownItAnchor, {
-    permalink: markdownItAnchor.permalink.ariaHidden({
-      class: "tdbc-anchor",
-      space: false,
-    }),
-    level: [1, 2, 3],
-    slugify: (str) =>
-      slugify(str, {
-        lower: true,
-        strict: true,
-        remove: /["]/g,
-      }),
-  });
+  })
   eleventyConfig.setLibrary("md", markdownLibrary);
 
   return {
