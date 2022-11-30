@@ -5,8 +5,6 @@ description: "Review feature info and customization details."
 
 ## Intro to Jumpstart
 
-This jumpstart is intended to be _just enough_ to be a functional site/blog using 11ty, and also to introduce essential 11ty features.
-
 [**Review the "Quick Start"**](/#quickstart) on the home page for how to get this starter up and running for your project.
 
 ### Colophon
