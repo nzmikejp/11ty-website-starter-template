@@ -1,6 +1,8 @@
 ---
 title: "About"
 description: "Review feature info and customization details."
+eleventyNavigation:
+  key: "About"
 ---
 
 ## Intro to Jumpstart

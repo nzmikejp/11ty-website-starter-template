@@ -1,6 +1,7 @@
 ---
 layout: base.njk
 templateEngineOverride: md, njk
+
 ---
 
 {# A tiny extra style for the starter home page, intended to be removed as you customize to fit your own content! #}
@@ -28,6 +29,7 @@ templateEngineOverride: md, njk
   }
 </style>
 
+{# --- Hero --- #}
 <header class="tdbc-hero">
   <div class="tdbc-container">
     <span class="logo">
@@ -60,9 +62,12 @@ templateEngineOverride: md, njk
     </h2>
   </div>
 </header>
+
+{# --- Content --- #}
 <main class="tdbc-container">
   <div class="tdbc-section">
     <ul class="tdbc-column-container">
+
       {%- for page in collections.pages -%}
       <li class="tdbc-card">
         <div class="tdbc-card__content">
@@ -71,11 +76,9 @@ templateEngineOverride: md, njk
         </div>
       </li>
       {%- endfor -%}
+      
     </ul>
   </div>
-  <style>
-    
-  </style>
 
 <h2 id="quickstart" class="tdbc-h3 tdbc-mt-lg">Quick Start</h2>
 

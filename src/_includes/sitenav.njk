@@ -5,12 +5,23 @@
     <a id="tdbc-siteid" href="/"
     {% if currentUrl === '/' %}aria-current="page"{% endif %}
     >{{ meta.siteName }}</a>
-    <ul role="list" class="tdbc-sitenav__navlist tdbc-list-unstyled">
-      {% for link in collections.pages %}
-        <li>
-          <a {% if currentUrl === link.url %}aria-current="page"{% endif %}
-          href="{{ link.url }}">{{ link.data.title }}</a>
-        </li>
-      {%- endfor %}
+
+    {% set navPages = collections.pages | eleventyNavigation %}
+    {% macro renderNavListItem(entry) -%}
+      <li{% if entry.url == currentUrl %} class="my-active-class"{% endif %}>
+        <a href="{{ entry.url }}">{{ entry.title }}</a>
+        {%- if entry.children.length -%}
+          <ul class="tdbc-sitenav__navlist tdbc-list-unstyled">
+            {%- for child in entry.children %}{{ renderNavListItem(child) }}
+            {% endfor -%}
+          </ul>
+        {%- endif -%}
+      </li>
+    {%- endmacro %}
+
+    <ul class="tdbc-sitenav__navlist tdbc-list-unstyled">
+      {%- for entry in navPages %}{{ renderNavListItem(entry) }}
+      {%- endfor -%}
     </ul>
-  </nav>
+  </div>
+</nav>

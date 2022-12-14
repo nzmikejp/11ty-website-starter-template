@@ -1,8 +1,11 @@
 ---
 layout: base.njk
 ---
+
+{# --- Nav ---- #}
 {% include 'sitenav.njk' %}
 
+{# --- Hero ---- #}
 <header class="tdbc-hero">
   <div class="tdbc-container">
     <h1 class="tdbc-ink--primary tdbc-mb-none">{{ title }}</h1>
@@ -11,8 +14,12 @@ layout: base.njk
     </h2>
   </div>
 </header>
+
+{# --- Content --- #}
 <main class="tdbc-container">
   <article class="tdbc-mx-auto">
+
     {{ content | safe }}
+    
   </article>
 </main>
