@@ -268,13 +268,6 @@ rules:
         - /img/
   # Styles for components should never need the universal selector.
   selector-max-universal: 0
-  # Ensure any defined symbols are prefixed with "brand-" OR "u-"
-  custom-media-pattern: ^tdbc-.+
-  custom-property-pattern: ^tdbc-.+
-  selector-class-pattern:
-    - ^tdbc-.+
-    - resolveNestedSelectors: true
-  selector-id-pattern: ^tdbc-.+
   # Names are more semantic than numbers
   font-weight-notation: named-where-possible
   # http://www.paulirish.com/2010/the-protocol-relative-url/
@@ -309,13 +302,6 @@ rules:
         - if
         - else
 
-  # SCSS naming patterns, just like our CSS conventions above.
-  # (note for $-vars we use a leading underscore for "private" variables)
-  scss/dollar-variable-pattern:
-    - ^_?tdbc-.+
-    - ignore: local
-  scss/at-function-pattern: ^tdbc-.+
-  scss/at-mixin-pattern: ^tdbc-.+
   # Prevents unneeded nesting selectors
   scss/selector-no-redundant-nesting-selector: true
   # Since leading underscores are not needed, they can be omitted

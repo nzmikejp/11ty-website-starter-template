@@ -1,5 +1,5 @@
 {
-  "name": "11ty-jumpstart",
+  "name": "11ty-website-starter-template",
   "version": "1.2.0",
   "description": "Quickly launch an 11ty-generated static site. Includes a minimal Sass framework, and generated sitemap, RSS feed, and social share preview images.",
   "main": "index.html",
